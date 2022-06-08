@@ -15,7 +15,7 @@
             <th>ManufactureYear</th>>
             <th>Price</th>>
         </tr>
-        <tr th:each="car : ${tempCars}">
+        <tr th:each="car : ${car}">
             <td th:utext="${car.mark}">Mark</td>
             <td th:utext="${car.manufactureYear}">ManufactureYear</td>
             <td th:utext="${car.price}">Price</td>
