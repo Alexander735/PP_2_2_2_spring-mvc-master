@@ -20,21 +20,18 @@ public class CarDAO {
         carsList.add(new Car("Toyota",1992,600000));
     }
 
-    public List<Car> carFilterService(int numberOfCars) {
-        List<Car> tempCars = new ArrayList<>();
-        int temp = 0;
+    public List<Car> carFilter(int numberOfCars) {
 
-        if (numberOfCars >= carsList.size()) {
-            tempCars = carsList;
+        if (numberOfCars >= 5) {
+            return carsList;
+
+        } else if (numberOfCars < 0) {
+            return new ArrayList<>();
 
         } else {
-            while (temp < numberOfCars) {
-                tempCars.add(carsList.get(temp));
-                temp++;
-            }
+            return carsList.subList(0,numberOfCars);
         }
 
-       return tempCars;
     }
 
 }
